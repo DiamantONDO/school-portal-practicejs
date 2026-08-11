@@ -2,6 +2,10 @@
 FROM node:20-slim AS builder
 WORKDIR /app
 
+# Make the API URL available to `next build` (NEXT_PUBLIC_* is baked in at build time)
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 # Install dependencies from lockfile
 COPY package.json package-lock.json ./
 RUN npm ci
