@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { Inter } from "next/font/google"
+import { WebVitals } from "@/lib/axiom/client";
 
 export const metadata: Metadata = {
   title: "School Portal",
@@ -20,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable}`}>
+      <WebVitals/>
       <body className="font-sans antialiased bg-white text-black">
         {/* AuthProvider must wrap everything so any page can call useAuth() */}
         <AuthProvider>{children}</AuthProvider>
