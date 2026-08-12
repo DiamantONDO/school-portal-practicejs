@@ -40,7 +40,7 @@ export default function LoginPage() {
 
   return (
     <> {/*parent fragment tag here to enclose both elements safely*/}
-      {/*Fixed: Swapped all 'class' parameters with 'className' and camelCased SVG vectors*/}
+      {/*Swapped all 'class' parameters with 'className' and camelCased SVG vectors*/}
       <header className="fixed top-0 left-0 w-full px-6 py-4 flex items-center justify-between bg-transaprent backdrop-blur-md border-b border-gray-100 z-50">
         <a className="flex items-center gap-2" href="/">
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#1E3A5F]">
@@ -57,19 +57,19 @@ export default function LoginPage() {
     <main className="flex min-h-screen items-center justify-center p-4 bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="bg-white w-full max-w-sm space-y-4 rounded-xl border p-12 border-gray-200 shadow-5xl h-5/5"
+        className="bg-white w-full max-w-md space-y-4 rounded-xl border p-12 border-gray-200 shadow-5xl h-5/5"
       >
-        <h1 className="text-xl font-semibold text-gray-800">
+        <h1 className="text-xl font-semibold text-gray-800 mb-1">
           Welcome back
         </h1>
-        <p className="text-gray-400">Sign in to your SchoolPortal account</p>
+        <p className="text-gray-500 mb-8 text-sm">Sign in to your SchoolPortal account</p>
 
         {error && (
           <p className="rounded bg-red-50 p-2 text-sm text-red-700">{error}</p>
         )}
 
         <div className="space-y-1 text-gray-800">
-          <label className="text-sm" htmlFor="email">
+          <label className="text-sm" htmlFor="email mb-2">
             Email address
           </label>
           <input
@@ -79,7 +79,7 @@ export default function LoginPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-2xl border-gray-200 px-3 py-2 bg-gray-100 border-gray-600 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-500"
+            className="w-full rounded-lg px-3 py-2 bg-white border border-gray-200 outline-indigo-600 focus:outline-4"
           />
         </div>
 
@@ -94,17 +94,15 @@ export default function LoginPage() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-4xl border-gray-400 px-3 py-2 bg-gray-100"
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 bg-white outline-indigo-600 focus:outline-4"
           />
         </div>
         <div>
-          <button>
-          <p className="text-indigo-600 text-sm flex-2">
-            
-            forgot password
-            <a href="/register" className=""></a>
-          </p>
-          </button>
+            <a 
+            href="/forgot-password" 
+            className="text-indigo-600 text-xs font-medium flex justify-end mb-6">{/**later */}
+            Forgot password?
+            </a>
         </div>
 
         {}
@@ -115,7 +113,7 @@ export default function LoginPage() {
         >
           {submitting ? "Signing in…" : "Sign In"}
         </button>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 text-center mt-6">
           Don't have an account? 
           <a href="/register" className="text-indigo-600 font-semibold"> Create one free</a>
         </p>
