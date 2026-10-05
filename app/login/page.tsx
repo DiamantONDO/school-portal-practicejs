@@ -50,7 +50,7 @@ export default function LoginPage() {
           </span>
           <span className="font-semibold text-[#1E3A5F] text-sm">SchoolPortal</span>
         </a>
-        <a className="text-xs text-[#6B7280] hover:text-[#111827] transition-colors duration-150" href="/">
+        <a className="text-xs text-[#6B7280] hover:text-[#111827] transition-colors duration-150" href="https://home.terrenode.com/?page_id=10#">
           ← Back to home
         </a>
       </header>
@@ -100,7 +100,7 @@ export default function LoginPage() {
         <div>
             <a 
             href="/forgot-password" 
-            className="text-indigo-600 text-xs font-medium flex justify-end mb-6">{/**later */}
+            className="text-indigo-600 text-xs font-medium flex justify-end mb-6">
             Forgot password?
             </a>
         </div>
